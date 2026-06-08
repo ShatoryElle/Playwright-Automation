@@ -1,12 +1,14 @@
 import { defineConfig } from '@playwright/test';
-
+import 'dotenv/config';
 export default defineConfig({
-  use: {
-    baseURL: 'https://qauto.forstudy.space/',
+  
+use: {
+  baseURL: process.env.BASE_URL,
 
-    httpCredentials: {
-      username: 'guest',
-      password: 'welcome2qauto',
-    },
+  httpCredentials: {
+    username: process.env.HTTP_USERNAME,
+    password: process.env.HTTP_PASSWORD,
   },
+},
+
 });
