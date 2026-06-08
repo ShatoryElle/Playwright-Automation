@@ -6,7 +6,7 @@ use: {
   baseURL: process.env.BASE_URL,
 
   httpCredentials: {
-    username: process.env.HTTP_USERNAME,
+   username: process.env.HTTP_USERNAME || 'guest'
     password: process.env.HTTP_PASSWORD,
   },
 },
