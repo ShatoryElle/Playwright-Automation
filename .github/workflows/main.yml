@@ -19,13 +19,13 @@ jobs:
   playwright-run:
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.39.0-jammy
+      image: mcr.microsoft.com/playwright:v1.48.0-jammy
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Run Playwright tests
         run: npx playwright test --config playwright.config.mjs
