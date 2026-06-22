@@ -1,14 +1,33 @@
 {
-  "name": "playwright-automation",
+  "name": "cypress-automation",
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "playwright test"
+    "cy:run:firefox": "cypress run --browser firefox",
+    "test:cypress": "cypress run",
+  "test:playwright": "playwright test"
   },
   "devDependencies": {
-    "@playwright/test": "^1.40.0"
+    "cypress": "^10.0.0",
+    "@playwright/test": "^1.48.0"
   },
   "dependencies": {
     "dotenv": "^17.4.2"
-  }
+  },
+  "main": "playwright.config.js",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShatoryElle/Playwright-Automation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ShatoryElle/Playwright-Automation/issues"
+  },
+  "homepage": "https://github.com/ShatoryElle/Playwright-Automation#readme"
 }
