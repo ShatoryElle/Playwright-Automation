@@ -6,16 +6,13 @@ jobs:
   cypress-firefox-run:
     runs-on: ubuntu-latest
     container:
-      # Використовуємо базовий образ з Node.js
-      image: node:20
+      image: cypress/browsers:node-20.17.0-chrome-128.0.6613.119-1-ff-129.0.2-edge-128.0.2739.67-1
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install Firefox and dependencies
-        run: |
-          apt-get update && apt-get install -y firefox
-          npm install
+      - name: Install dependencies
+        run: npm install
 
       - name: Run Cypress in Firefox
         run: npx cypress run --browser firefox
