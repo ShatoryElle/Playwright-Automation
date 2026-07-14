@@ -5,14 +5,14 @@ on: [push, pull_request]
 jobs:
   cypress-firefox-run:
     runs-on: ubuntu-latest
-    container: cypress/included:10.0.0
-    
+    container: cypress/browsers:node-18.16.0-chrome-114.0.5735.133-1-ff-113.0-edge-114.0.1823.51-1
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      
+
       - name: Install dependencies
         run: npm install
-        
+
       - name: Run Cypress tests in Firefox
-        run: cypress run --browser firefox
+        run: npm run cy:run:firefox
