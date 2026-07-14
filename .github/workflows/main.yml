@@ -5,7 +5,7 @@ on: [push, pull_request]
 jobs:
   cypress-firefox-run:
     runs-on: ubuntu-latest
-    container: cypress/browsers:node-20.9.0-chrome-121.0.6167.85-1-ff-122.0-edge-121.0.2277.83-1
+    container: cypress/included:10.0.0
     
     steps:
       - name: Checkout repository
@@ -14,8 +14,5 @@ jobs:
       - name: Install dependencies
         run: npm install
         
-      - name: Verify Firefox
-        run: npx cypress install --browser firefox
-        
       - name: Run Cypress tests in Firefox
-        run: npx cypress run --browser firefox
+        run: cypress run --browser firefox
