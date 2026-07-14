@@ -14,10 +14,6 @@ jobs:
       - name: Install dependencies
         run: npm install
         
-      - name: Install Firefox
-        run: |
-          apt-get update
-          apt-get install -y firefox
-        
       - name: Run Cypress tests in Firefox
-        run: npx cypress run --browser firefox
+     
+        run: /usr/bin/cypress run --browser firefox
